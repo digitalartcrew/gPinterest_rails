@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
 	def index
-		@pins = Pin.all
+		@pins = Pin.all.order(:id)
 		render :index
 	end
 
@@ -13,7 +13,8 @@ class PinsController < ApplicationController
 	end
 
 	def create
-		@pin = Pin.create pin_params
+		@pin = Pin.create(pin_params)
+		redirect_to '/pins'
 	end
 
 	def edit 
