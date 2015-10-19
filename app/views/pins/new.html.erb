@@ -1,0 +1,19 @@
+<%= render "navbar" %>
+
+<h1>New Pin</h1>
+
+<%= form_for @pin do |f| %>
+<div class="form1">
+  <%= f.label "Url" %>
+  <%= f.text_field :url %>
+</div> 
+<div class="form1">
+  <%= f.label "Comment" %>
+  <%= f.text_field :comment %>
+</div>   
+<div class="form1">
+  <%= f.label "Image" %>
+  <%= f.text_field :image %>
+</div>
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,1 +1,22 @@
-<h1>It's All Good</h1>
+cd<%= render "navbar" %>
+
+<h1>Pins</h1>
+
+<table class="table table-striped">
+  <thead class="">
+    <td>IMG</td>
+    <td>URL</td>
+    <td>Comment</td>
+    <td></td>
+  </thead>
+  <tbody>
+<% @pins.each do |pin| %>
+    <tr>
+      <td><img src="<%= pin.image %>" style="width: 50px"></td>
+      <td class="red"><a href="<%= pin.url %>"><%= pin.url %></a></td>
+      <td> <%= pin.comment %></td>
+      <td><a href="/pins/<%= pin.id %>">More</a></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
